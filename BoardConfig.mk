@@ -6,6 +6,18 @@
 
 DEVICE_PATH := device/oplus/ossi
 
+# A/B
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS := \
+    boot \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    vendor
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -66,6 +78,9 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
 
 BOARD_USES_METADATA_PARTITION := true
+
+# Recovery
+BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Inherit the proprietary files
 include vendor/oplus/ossi/BoardConfigVendor.mk
